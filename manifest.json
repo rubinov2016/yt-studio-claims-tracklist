@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "YT Studio Claims Tracklist",
+  "version": "1.2",
+  "description": "Builds a 'start – end - Title - Artist' tracklist from Content ID claims in YouTube Studio (this video or all videos matching a title filter).",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://studio.youtube.com/*"],
+  "action": {
+    "default_title": "Claims → tracklist",
+    "default_popup": "popup.html"
+  }
+}

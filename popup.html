@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body{width:600px;margin:0;padding:10px 12px;font:13px/1.4 Roboto,Arial,sans-serif;color:#0f0f0f;background:#fff}
+  h1{font-size:14px;margin:0 0 8px}
+  .row{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+  input[type=text]{flex:1;min-width:140px;padding:6px 8px;border:1px solid #ccc;border-radius:4px;font:inherit}
+  input[type=number]{width:52px;padding:4px;border:1px solid #ccc;border-radius:4px;font:inherit}
+  button{background:#f2f2f2;border:1px solid #ccc;border-radius:16px;padding:6px 12px;font:inherit;cursor:pointer}
+  button.primary{background:#065fd4;color:#fff;border-color:#065fd4}
+  button:disabled{opacity:.5;cursor:default}
+  label{display:flex;gap:4px;align-items:center;white-space:nowrap}
+  textarea{width:100%;height:320px;box-sizing:border-box;font:12px/1.4 Consolas,Menlo,monospace;border:1px solid #ccc;border-radius:4px;padding:8px;white-space:pre;resize:vertical}
+  #status{color:#606060;min-height:16px;margin-top:6px}
+  #status.err{color:#c00}
+</style>
+</head>
+<body>
+  <h1>Claims → tracklist</h1>
+  <div class="row">
+    <button id="this" class="primary">This video</button>
+    <input id="filter" type="text" value="10 hours" title="Regex, case-insensitive, matched against video titles">
+    <button id="all" class="primary">All matching videos</button>
+  </div>
+  <div class="row">
+    <label><input id="audio" type="checkbox" checked> audio claims only</label>
+    <label>merge gap (s) <input id="gap" type="number" value="5"></label>
+    <label><input id="compact" type="checkbox" checked> ≤<input id="limit" type="number" value="5000" style="width:60px"> chars (start time only)</label>
+    <button id="copy">Copy</button>
+    <button id="dl">Download .txt</button>
+  </div>
+  <textarea id="out" spellcheck="false" placeholder="Open a YouTube Studio tab, then press a button. Keep this popup open while it runs."></textarea>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
